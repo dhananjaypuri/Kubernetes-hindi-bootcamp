@@ -100,11 +100,17 @@ kubectl create clusterrolebinding sam-clusteradmin-binding --clusterrole=cluster
 
 
 kubectl create token sam
+
 TOKEN=outputfromabove
+
 APISERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+
 List deployments
+
 curl -X GET $APISERVER/apis/apps/v1/namespaces/default/deployments -H "Authorization: Bearer $TOKEN" -k
+
 Create Deployment
+
 curl -X POST $APISERVER/apis/apps/v1/namespaces/default/deployments \
   -H "Authorization: Bearer $TOKEN" \
   -H 'Content-Type: application/json' \
@@ -113,7 +119,8 @@ curl -X POST $APISERVER/apis/apps/v1/namespaces/default/deployments \
 
 
 
-List pods 
+List pods
+
 curl -X GET $APISERVER/api/v1/namespaces/default/pods \
   -H "Authorization: Bearer $TOKEN" \
   -k  
