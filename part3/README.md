@@ -116,7 +116,7 @@ spec:
     targetPort: 80
 ```
 
-### Multi container pod 
+### Multi container pod/ Side Car Container 
 ```
 apiVersion: v1
 kind: Pod
