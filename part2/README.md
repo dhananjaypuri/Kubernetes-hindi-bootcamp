@@ -5,6 +5,8 @@ First we will discuss Kubernetes Architecture and try to understand what happens
 
 ## Create CSR
 openssl genrsa -out saiyam.key 2048
+
+
 openssl req -new -key saiyam.key -out saiyam.csr -subj "/CN=saiyam/O=group1"
 
 ## Sign CSE with Kubernetes CA
@@ -22,7 +24,11 @@ spec:
   - client auth
 ```
 kubectl apply -f csr.yaml
+
+
 kubectl certificate approve saiyam
+
+
 
 kubectl get csr saiyam -o jsonpath='{.status.certificate}' | base64 --decode > saiyam.crt
 
@@ -54,8 +60,14 @@ roleRef:
 ```
 ### setup kubeconfig
 kubectl config set-credentials saiyam --client-certificate=saiyam.crt --client-key=saiyam.key
+
+
 kubectl config get-contexts
+
+
 kubectl config set-context saiyam-context --cluster=kubernetes --namespace=default --user=saiyam
+
+
 kubectl config use-context saiyam-context
 
 
@@ -69,6 +81,8 @@ export KUBECONFIG=/path/to/first/config:/path/to/second/config:/path/to/third/co
 Create a file deploy.json
 ``` 
 kubectl create deployment nginx --image=nginx --dry-run=client -o json > deploy.json
+
+
 kubectl run nginx --image=nginx --dry-run=client -o json
 
 ```
@@ -76,7 +90,11 @@ kubectl run nginx --image=nginx --dry-run=client -o json
 SA creation
 ```
 kubectl create serviceaccount sam --namespace default
+
+
 kubectl create clusterrolebinding sam-clusteradmin-binding --clusterrole=cluster-admin --serviceaccount=default:sam
+
+
 kubectl create token sam
 TOKEN=outputfromabove
 APISERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
@@ -88,6 +106,8 @@ curl -X POST $APISERVER/apis/apps/v1/namespaces/default/deployments \
   -H 'Content-Type: application/json' \
   -d @deploy.json \
   -k
+
+
 
 List pods 
 curl -X GET $APISERVER/api/v1/namespaces/default/pods \
