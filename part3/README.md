@@ -1,3 +1,8 @@
+## Pod Lifecycle
+
+![image](https://github.com/user-attachments/assets/12dcda34-7f71-4cd5-babd-3f84049b07e1)
+
+
 ### simple pod
 ```
 apiVersion: v1
