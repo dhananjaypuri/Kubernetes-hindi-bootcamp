@@ -77,6 +77,10 @@ export KUBECONFIG=/path/to/first/config:/path/to/second/config:/path/to/third/co
 
 
 ========================================
+### GVR (Group Version Resourse) and GVK (Group Version Kind)
+
+Any yaml is converted to JSON with the help of API Server and it hits the endpoints (REST Api) which do the essential work.
+Means even resources in K8 can be created without kubectl commands as well .
 
 Create a file deploy.json
 ``` 
