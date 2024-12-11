@@ -31,11 +31,15 @@ Pod disruptions can happen for various reasons, including:
 
 Planned Disruptions: 
 
+
 Node maintenance (e.g., upgrades, repairs)
+
 Scaling operations (adding or removing nodes)
 
 Unplanned Disruptions:
 
 Node failures (hardware or software issues)
+
 Network partitions
+
 Evictions due to resource constraints
