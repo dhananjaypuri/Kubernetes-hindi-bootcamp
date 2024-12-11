@@ -23,3 +23,19 @@ kubectl apply -f downwardapipod.yaml
 ### QOS 
 kubectl get pods nginx-guaranteed -oyaml | grep qos
 
+## POD disruption
+
+![image](https://github.com/user-attachments/assets/2405adcb-0882-466a-aaac-c6ae8245b5ca)
+
+Pod disruptions can happen for various reasons, including:
+
+Planned Disruptions: 
+
+Node maintenance (e.g., upgrades, repairs)
+Scaling operations (adding or removing nodes)
+
+Unplanned Disruptions:
+
+Node failures (hardware or software issues)
+Network partitions
+Evictions due to resource constraints
