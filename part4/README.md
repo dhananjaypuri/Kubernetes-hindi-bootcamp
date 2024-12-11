@@ -29,17 +29,17 @@ kubectl get pods nginx-guaranteed -oyaml | grep qos
 
 Pod disruptions can happen for various reasons, including:
 
-Planned Disruptions: 
+# 1 . Planned Disruptions: 
 
 
-Node maintenance (e.g., upgrades, repairs)
+  Node maintenance (e.g., upgrades, repairs)
 
-Scaling operations (adding or removing nodes)
+  Scaling operations (adding or removing nodes)
 
-Unplanned Disruptions:
+# 2. Unplanned Disruptions:
 
-Node failures (hardware or software issues)
+  Node failures (hardware or software issues)
 
-Network partitions
+  Network partitions
 
-Evictions due to resource constraints
+  Evictions due to resource constraints
