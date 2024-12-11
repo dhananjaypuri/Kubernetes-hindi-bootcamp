@@ -27,6 +27,8 @@ kubectl get pods nginx-guaranteed -oyaml | grep qos
 
 ![image](https://github.com/user-attachments/assets/2405adcb-0882-466a-aaac-c6ae8245b5ca)
 
+https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
+
 Pod disruptions can happen for various reasons, including:
 
 # 1 . Planned Disruptions: 
