@@ -27,6 +27,7 @@ kubectl get pods nginx --show-labels
 kubectl get pod -l app!=nginx
 kubectl create deploy bootcamp --image=nginx --replicas 3
 kubectl get pods -l 'app in (test,bootcamp)'
+kubectl get pods -l 'env notin (dev)'
 ```
 
 ## Priority class 
