@@ -75,4 +75,8 @@ kubectl get pods -o=custom-columns=NAME:.metadata.name,IMAGE:.spec.containers[*]
 Check the endpoints for the service created and you will see all in the endpoints ready to be served traffic. 
 
 ## Probes 
+
+![image](https://github.com/user-attachments/assets/d6bdf51d-3b4a-42e9-b668-36d021c82d6a)
+
+
 Probes you can test by deploying probe.yaml and then deleting that, edit the yaml with port 8080 in the probe check and wait for sometime to see it fail. 
