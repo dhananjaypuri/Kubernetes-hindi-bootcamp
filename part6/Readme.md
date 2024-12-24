@@ -27,6 +27,8 @@ curl -X DELETE 'http://localhost:8080/apis/apps/v1/namespaces/default/replicaset
 ```
 ## Deployments 
 Create deployment
+
+Note: Zero Downtime in rolling update strategy
 ```
 kubectl create deploy bootcamp --image nginx --replicas 3 --port 80
 kubectl rollout status deployment bootcamp
@@ -50,6 +52,8 @@ kubectl rollout pause deployment/bootcamp
 ```
 
 For Recreate strategy
+Note: There is Downtime in Recreate strategy
+
 ```
 kubectl apply -f recreate.yaml
 ```
