@@ -1,0 +1,30 @@
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: bootcamp
+  namespace: default
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx-bootcamp
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-bootcamp
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "0.3"
+            memory: "300Mi"
+          limits:
+            cpu: "0.5"
+            memory: "500Mi"
+status: {}
